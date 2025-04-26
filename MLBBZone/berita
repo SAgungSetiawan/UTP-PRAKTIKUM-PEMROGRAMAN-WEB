@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Data MLBB Zone</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f4f4f4;
+      color: #1b263b;
+    }
+
+    nav {
+      background-color: #0a1128;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 30px;
+    }
+
+    nav h1 {
+      color: #f4a261;
+      margin: 0;
+      font-size: 24px;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      margin: 0;
+      padding: 0;
+    }
+
+    nav ul li {
+      margin-left: 20px;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: white;
+      font-weight: 600;
+      padding: 8px 12px;
+      border-radius: 5px;
+      transition: background-color 0.3s;
+    }
+
+    nav ul li a:hover,
+    nav ul li a.active {
+      background-color: #f4a261;
+      color: #0a1128;
+    }
+
+    main {
+      max-width: 1000px;
+      margin: 30px auto;
+      padding: 0 20px;
+    }
+
+    section {
+      background-color: white;
+      border-radius: 10px;
+      padding: 20px;
+      margin-bottom: 30px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+
+    section h2 {
+      font-size: 22px;
+      margin-bottom: 10px;
+      color: #0a1128;
+    }
+
+    .source-info {
+      font-size: 14px;
+      color: #777;
+      margin-bottom: 10px;
+    }
+
+    .content-preview {
+      font-size: 16px;
+      line-height: 1.6;
+    }
+
+    .content-preview img {
+      width: 100%;
+      border-radius: 8px;
+      margin-top: 15px;
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <h1>MLBB Zone</h1>
+    <ul>
+      <li><a href="beranda">Beranda</a></li>
+      <li><a href="hero">Top Heroes</a></li>
+      <li><a href="berita" class="active">Berita</a></li>
+      <li><a href="patch">Patch & Event</a></li>
+      <li><a href="turnamen">MPL S15</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <section>
+      <h2>Hasil ESL SPS S6 Mobile Master Grand Final, ONIC PH Gagalkan Mimpi RRQ Juara</h2>
+        <div class="content-preview">
+          ONIC PH angkat piala ESL SPS S6 Mobile Master usai kalahkan RRQ 4-1.
+          Lagi dan lagi, termasuk di ESL SPS S6 ini, Indonesia harus tunduk pada kekuatan Filipina. ONIC PH benar-benar terlalu kuat untuk RRQ. Mereka sangat adaptif, fleksibel, dan tenang, atau mungkin bisa disebut saja sebagai komplit.
+          
+        <img src="https://storage.googleapis.com/revivaltv-app/562073581299708873_1024x1024" alt="Mobile Legends Home">
+      </div>
+    </section>
+
+    <section>
+      <h2>MPL ID Season 15</h2>
+       <div class="content-preview">
+        MPL Indonesia Season 15 mempertemukan tim-tim terbaik seperti ONIC, RRQ, EVOS, dan lainnya dalam kompetisi MLBB terbesar di Tanah Air.
+
+        <ul>
+          <li>Juara S14: Team Liquid ID</li>
+          <li>Pemain Bintang: Kairi, Lemon, REKT</li>
+          <li>Streaming: YouTube & TikTok @mpl.id.official</li>
+        </ul>
+
+        <img src="https://static.promediateknologi.id/crop/0x0:0x0/0x0/webp/photo/p2/76/2025/03/13/jadwal-mpl-id-s15-1741239935459_169-2319432566.jpeg" alt="MPL ID S15 Banner">
+      </div>
+    </section>
+
+    <section>
+      <h2>Biodata Karakter Neobeasts Skins.</h2>
+        <div class="content-preview">
+        Skin seri Neobeasts baru kini tersedia - Ling "Neobeast Ling", Brody "Neobeast Brody", dan Pharsa "Neobeast Pharsa". Jangan lewatkan skinnya!
+        <img src="https://akmweb.youngjoygame.com/web/gms/image/e5c882cbe1a9b85274b515d4e262c2ce.jpg" alt="Mobile Legends Home">
+      </div>
+    </section>
+  </main>
+
+</body>
+</html>

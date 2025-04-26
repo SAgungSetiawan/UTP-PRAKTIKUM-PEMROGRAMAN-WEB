@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MPL ID Season 15 - MLBB Zone</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f4f4f4;
+      color: #1b263b;
+    }
+    nav {
+      background-color: #0a1128;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 30px;
+    }
+    nav h1 {
+      color: #f4a261;
+      margin: 0;
+      font-size: 24px;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      margin: 0;
+      padding: 0;
+    }
+    nav ul li {
+      margin-left: 20px;
+    }
+    nav ul li a {
+      text-decoration: none;
+      color: white;
+      font-weight: 600;
+      padding: 8px 12px;
+      border-radius: 5px;
+      transition: background-color 0.3s;
+    }
+    nav ul li a:hover,
+    nav ul li a.active {
+      background-color: #f4a261;
+      color: #0a1128;
+    }
+    main {
+      max-width: 1000px;
+      margin: 30px auto;
+      padding: 0 20px;
+    }
+    h2 {
+      color: #0a1128;
+      border-bottom: 3px solid #f4a261;
+      padding-bottom: 5px;
+      margin-bottom: 20px;
+    }
+    select {
+      padding: 8px 12px;
+      font-size: 14px;
+      margin-bottom: 15px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 30px;
+    }
+    table, th, td {
+      border: 1px solid #ccc;
+    }
+    th, td {
+      padding: 10px;
+      text-align: center;
+      font-size: 14px;
+    }
+    th {
+      background-color: #0a1128;
+      color: white;
+    }
+    .source {
+      font-size: 13px;
+      color: #777;
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <h1>MLBB Zone</h1>
+    <ul>
+      <li><a href="beranda">Beranda</a></li>
+      <li><a href="hero">Top Heroes</a></li>
+      <li><a href="berita">Berita</a></li>
+      <li><a href="patch">Patch & Event</a></li>
+      <li><a href="turnamen" class="active">MPL S15</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <h2>Jadwal Pertandingan MPL ID Season 15</h2>
+    <div class="source">Pilih minggu untuk melihat jadwal pertandingan:</div>
+
+    <select id="weekSelector" onchange="updateSchedule()">
+      <option value="1">Week 1</option>
+      <option value="2">Week 2</option>
+      <option value="3">Week 3</option>
+      <option value="4">Week 4</option>
+      <option value="5">Week 5</option>
+      <option value="6">Week 6</option>
+      <option value="7">Week 7</option>
+      <option value="8">Week 8</option>
+      <option value="9">Week 9</option>
+    </select>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Tanggal</th>
+          <th>Tim 1</th>
+          <th>Skor</th>
+          <th>Tim 2</th>
+        </tr>
+      </thead>
+      <tbody id="scheduleTable">
+        <!-- Jadwal akan dimasukkan lewat JavaScript -->
+      </tbody>
+    </table>
+
+    <h2>Klasemen Sementara MPL ID S15</h2>
+    <table>
+      <tr>
+        <th>Pos</th>
+        <th>Tim</th>
+        <th>Poin</th>
+        <th>W-L</th>
+        <th>Game W-L</th>
+      </tr>
+      <tr><td>1</td><td>RRQ Hoshi</td><td>6</td><td>6-1</td><td>12-5</td></tr>
+      <tr><td>2</td><td>EVOS</td><td>5</td><td>5-3</td><td>12-8</td></tr>
+      <tr><td>3</td><td>BTR</td><td>5</td><td>5-3</td><td>12-8</td></tr>
+      <tr><td>4</td><td>GEEK</td><td>5</td><td>5-3</td><td>11-10</td></tr>
+      <tr><td>5</td><td>Alter Ego</td><td>4</td><td>4-3</td><td>10-9</td></tr>
+      <tr><td>6</td><td>TLID</td><td>3</td><td>3-4</td><td>9-10</td></tr>
+      <tr><td>7</td><td>DEWA United</td><td>3</td><td>3-4</td><td>9-10</td></tr>
+      <tr><td>8</td><td>ONIC</td><td>3</td><td>3-5</td><td>9-12</td></tr>
+      <tr><td>9</td><td>NAVI</td><td>0</td><td>0-8</td><td>4-16</td></tr>
+    </table>
+  </main>
+
+  <script>
+    const schedules = {
+  1: [
+    ["7 Maret", "NAVI", "0-2", "RRQ"],
+    ["7 Maret", "EVOS", "2-1", "TLID"],
+    ["8 Maret", "EVOS", "2-0", "GEEK"],
+    ["8 Maret", "BTR", "2-0", "AE"],
+    ["8 Maret", "RRQ", "2-0", "ONIC"],
+    ["9 Maret", "DEWA", "2-1", "BTR"],
+    ["9 Maret", "AE", "2-1", "ONIC"],
+    ["9 Maret", "TLID", "2-1", "NAVI"]
+  ],
+  2: [
+    ["14 Maret", "ONIC", "1-2", "GEEK"],
+    ["14 Maret", "DEWA", "2-0", "NAVI"],
+    ["15 Maret", "NAVI", "1-2", "AE"],
+    ["15 Maret", "RRQ", "2-0", "TLID"],
+    ["15 Maret", "BTR", "1-2", "EVOS"],
+    ["16 Maret", "GEEK", "0-2", "BTR"],
+    ["16 Maret", "AE", "2-0", "EVOS"],
+    ["16 Maret", "TLID", "2-0", "DEWA"]
+  ],
+  3: [
+    ["21 Maret", "ONIC", "2-1", "DEWA"],
+    ["21 Maret", "NAVI", "0-2", "EVOS"],
+    ["22 Maret", "TLID", "1-2", "GEEK"],
+    ["22 Maret", "ONIC", "2-0", "BTR"],
+    ["22 Maret", "RRQ", "2-1", "AE"],
+    ["23 Maret", "BTR", "2-1", "NAVI"],
+    ["23 Maret", "GEEK", "1-2", "RRQ"],
+    ["23 Maret", "AE", "2-1", "DEWA"]
+  ],
+  4: [
+    ["18 April", "NAVI", "1-2", "ONIC"],
+    ["18 April", "EVOS", "1-2", "DEWA"],
+    ["19 April", "TLID", "1-2", "BTR"],
+    ["19 April", "RRQ", "2-1", "EVOS"],
+    ["19 April", "GEEK", "2-1", "AE"],
+    ["20 April", "ONIC", "1-2", "TLID"],
+    ["20 April", "BTR", "2-0", "RRQ"],
+    ["20 April", "DEWA", "1-2", "GEEK"]
+  ],
+  5: [
+    ["25 April", "GEEK", "2-0", "NAVI"],
+    ["25 April", "EVOS", "2-0", "ONIC"],
+    ["26 April", "DEWA", "vs", "RRQ"],
+    ["26 April", "AE", "vs", "TLID"],
+    ["26 April", "EVOS", "vs", "BTR"],
+    ["27 April", "AE", "vs", "NAVI"],
+    ["27 April", "GEEK", "vs", "ONIC"],
+    ["27 April", "DEWA", "vs", "TLID"]
+  ],
+  6: [
+    ["2 Mei", "NAVI", "vs", "DEWA"],
+    ["2 Mei", "AE", "vs", "GEEK"],
+    ["3 Mei", "EVOS", "vs", "AE"],
+    ["3 Mei", "TLID", "vs", "ONIC"],
+    ["3 Mei", "RRQ", "vs", "BTR"],
+    ["4 Mei", "NAVI", "vs", "TLID"],
+    ["4 Mei", "ONIC", "vs", "RRQ"],
+    ["4 Mei", "GEEK", "vs", "EVOS"]
+  ],
+  7: [
+    ["9 Mei", "GEEK", "vs", "DEWA"],
+    ["9 Mei", "RRQ", "vs", "TLID"],
+    ["10 Mei", "DEWA", "vs", "AE"],
+    ["10 Mei", "EVOS", "vs", "RRQ"],
+    ["10 Mei", "ONIC", "vs", "NAVI"],
+    ["11 Mei", "TLID", "vs", "EVOS"],
+    ["11 Mei", "NAVI", "vs", "BTR"],
+    ["11 Mei", "RRQ", "vs", "GEEK"]
+  ],
+  8: [
+    ["17 Mei", "GEEK", "vs", "TLID"],
+    ["17 Mei", "BTR", "vs", "ONIC"],
+    ["17 Mei", "AE", "vs", "RRQ"],
+    ["18 Mei", "ONIC", "vs", "EVOS"],
+    ["18 Mei", "DEWA", "vs", "RRQ"],
+    ["18 Mei", "NAVI", "vs", "GEEK"]
+  ],
+  9: [
+    ["23 Mei", "BTR", "vs", "GEEK"],
+    ["23 Mei", "DEWA", "vs", "ONIC"],
+    ["24 Mei", "EVOS", "vs", "NAVI"],
+    ["24 Mei", "TLID", "vs", "RRQ"],
+    ["24 Mei", "ONIC", "vs", "AE"],
+    ["25 Mei", "AE", "vs", "BTR"],
+    ["25 Mei", "DEWA", "vs", "EVOS"],
+    ["25 Mei", "RRQ", "vs", "NAVI"]
+  ]
+    };
+
+    function updateSchedule() {
+      const week = document.getElementById("weekSelector").value;
+      const table = document.getElementById("scheduleTable");
+      table.innerHTML = "";
+
+      const data = schedules[week];
+      if (data.length === 0) {
+        table.innerHTML = `<tr><td colspan="4">Belum ada data untuk minggu ini.</td></tr>`;
+        return;
+      }
+
+      data.forEach(row => {
+        const tr = document.createElement("tr");
+        row.forEach(cell => {
+          const td = document.createElement("td");
+          td.textContent = cell;
+          tr.appendChild(td);
+        });
+        table.appendChild(tr);
+      });
+    }
+
+    // Load default Week 1
+    updateSchedule();
+  </script>
+
+</body>
+</html>

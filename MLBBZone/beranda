@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MLBB Zone - Dashboard</title>
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f4f4;
+            color: #1b263b;
+            box-sizing: border-box;
+        }
+        body {
+            display: flex;
+            flex-direction: column;
+        }
+        nav {
+      background-color: #0a1128;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 30px;
+    }
+    nav h1 {
+      color: #f4a261;
+      margin: 0;
+      font-size: 24px;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      margin: 0;
+      padding: 0;
+    }
+    nav ul li {
+      margin-left: 20px;
+    }
+    nav ul li a {
+      text-decoration: none;
+      color: white;
+      font-weight: 600;
+      padding: 8px 12px;
+      border-radius: 5px;
+      transition: background-color 0.3s;
+    }
+        nav ul li a:hover,
+        nav ul li a.active {
+            background-color: #f4a261;
+            color: #0a1128;
+        }
+        main {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            padding: 0 15px;
+            max-height: calc(100vh - 64px);
+        }
+        header {
+            text-align: center;
+            background-color: #243a5e;
+            padding: 20px;
+            width: 100%;
+            margin: 0;
+        }
+        header h2 {
+            font-size: 32px;
+            margin: 0 0 4px; 
+            color: #f4a261;
+        }
+        
+        header p {
+            font-size: 16px;
+            color: #dcdcdc;
+            margin-top: 0; 
+        }
+        
+        
+        
+        .highlight-section {
+            width: 100%;
+            max-width: 1100px;
+            padding: 30px 20px 20px;
+        }
+        .highlight-section h3 {
+            font-size: 22px;
+            margin-bottom: 10px;
+            color: #1b263b;
+            border-bottom: 3px solid #f4a261;
+            display: inline-block;
+            padding-bottom: 5px;
+        }
+        .card-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 20px;
+        }
+        .card {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    padding: 3px;
+    transition: transform 0.3s;
+    height: 280px; 
+    display: flex;
+    flex-direction: column;
+    
+}
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+        .card img {
+            width: 100%;
+            height: 140px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 10px;
+        }
+        .card h4 {
+            margin: 6px 0;
+            color: #0a1128;
+            font-size: 16px;
+        }
+        .card p {
+            margin: 0;
+            color: #444;
+            font-size: 13px;
+        }
+       
+
+        .card-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
+.card-link * {
+    text-decoration: none;
+    color: inherit;
+}
+
+    </style>
+</head>
+<body>
+    <nav>
+        <h1>MLBB Zone</h1>
+        <ul>
+            <li><a href="beranda" class="active">Beranda</a></li>
+            <li><a href="hero">Top Heroes</a></li>
+            <li><a href="berita">Berita</a></li>
+            <li><a href="patch">Patch & Event</a></li>
+            <li><a href="turnamen">MPL S15</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <header>
+            <h2>Selamat Datang Di MLBB Zone</h2>
+            <p>Temukan semua informasi terbaru tentang Mobile Legends langsung dari sumber terpercaya.</p>
+        </header>
+
+        <section class="highlight-section">
+            <h3>Highlights</h3>
+            <div class="card-container">
+                <a href="hero" class="card-link">
+                    <div class="card">
+                        <img src="https://akmweb.youngjoygame.com/web/gms/image/2a1ec26b472f90f8f5f935123159957b.jpg" alt="Top 6 Hero">
+                        <h4>Top 6 Hero</h4>
+                        <p>Simak daftar hero paling OP dan sering digunakan dalam MPL ID S15.</p>
+                    </div>
+                </a>
+            
+                <a href="berita" class="card-link">
+                    <div class="card">
+                        <img src="https://storage.googleapis.com/revivaltv-app/562073581299708873_1024x1024" alt="Berita MLBB">
+                        <h4>Berita Terbaru</h4>
+                        <p>ONIC PH angkat piala ESL SPS S6 Mobile Master usai kalahkan RRQ 4-1.</p>
+                    </div>
+                </a>
+            
+                <a href="patch" class="card-link">
+                    <div class="card">
+                        <img src="https://akmweb.youngjoygame.com/web/gms/image/6d52591ae3a4fdad8f35d87eba69f21f.jpg" alt="Patch Notes">
+                        <h4>Patch Notes & Event</h4>
+                        <p>Lihat perubahan dan event terkini dengan hadiah menarik dari MLBB!</p>
+                    </div>
+                </a>
+            
+                <a href="turnamen" class="card-link">
+                    <div class="card">
+                        <img src="https://cdn.id-mpl.com/season15/banners/samsungxmplid.jpg?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO00UK9XG63MGT2KWV9H%2F20250426%2Fsgp1%2Fs3%2Faws4_request&X-Amz-Date=20250426T002730Z&X-Amz-SignedHeaders=host&X-Amz-Expires=21600&X-Amz-Signature=b1e615c628cd301cb726a2453f0e72b87698a22338aec2b850af34190b9c8370" alt="MPL ID S15">
+                        <h4>MPL ID Season 15</h4>
+                        <p>Ikuti keseruan kompetisi profesional MLBB musim ini dan lihat siapa yang jadi juara!</p>
+                    </div>
+                </a>
+            </div>
+            
+        </section>
+    </main>
+</body>
+</html>
